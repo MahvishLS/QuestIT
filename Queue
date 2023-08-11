@@ -1,0 +1,56 @@
+include<stdio.h>
+
+void main()
+{
+    int ch,val,max=6,front=-1,rear=-1;
+    int a[max],i;
+ do
+    {
+        printf("Choose an operation : 1]insert\n 2]Delete\n 3]Exit\n ");
+        scanf("%d",&ch);
+       
+        switch(ch)
+        {
+            case 1:
+            if(rear==max-1)
+            {
+                printf("QUEUE IS FULL\n");
+               
+            }
+            else if(front==-1 && rear==-1)
+            {
+                front++;
+                rear++;
+                printf("ENTER THE ELEMENT TO BE INSERTED\n");
+                scanf("%d",&val);
+                a[rear]=val;
+            }
+            else
+            {
+                rear++;
+             printf("ENTER THE ELEMENT TO BE INSERTED\n");
+                scanf("%d",&val);
+                a[rear]=val;
+            }
+            break;
+           
+            case 2:
+            if(rear==-1 || front>rear)
+            {
+                printf("QUEUE IS EMPTY");
+            }
+         else
+         {
+             printf("%d IS DELETED \n",a[front]);
+             front--;
+         }
+         break;
+         
+       
+            }
+           
+            }
+            while(ch!=3);
+        }
+       
+       
